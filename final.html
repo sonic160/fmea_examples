@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FMEA Report - Hiwonder Armpi_FPV Servo Motor</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1, h2, h3 { color: #2c3e50; }
+        h1 { text-align: center; }
+        hr { border: 0; height: 1px; background: #ccc; margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; vertical-align: top; }
+        th { background-color: #f2f2f2; font-weight: bold; }
+        .reference-list { list-style-type: none; padding: 0; }
+        .reference-list li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Failure Mode and Effects Analysis (FMEA) Report for Hiwonder Armpi_FPV Servo Motor</h1>
+
+    <hr>
+
+    <h3>1.0 System Description</h3>
+    <p>The Hiwonder Armpi_FPV is a 6-degree-of-freedom (DOF) robotic arm designed for educational use. It is controlled by a <strong>Raspberry Pi 4B</strong> running ROS 1 Melodic. The servo motors are critical actuators, providing motion for each joint to perform tasks like object manipulation. The system operates in an indoor, dry environment and is constrained by a 500g payload limit.</p>
+
+    <hr>
+
+    <h3>2.0 Block Diagram of the System</h3>
+    <p><img src="http://googleusercontent.com/image_generation_content/0" alt="Block diagram of the Hiwonder Armpi FPV system components and their connections"></p>
+    <p>The servo motors, which are the focus of this analysis, are connected to an <strong>extended control board</strong> that is managed by the Raspberry Pi. This block diagram illustrates the relationship between the motor and the other system components.</p>
+
+    <hr>
+
+    <h3>3.0 FMEA Ground Rules and Assumptions</h3>
+    <ul>
+        <li><strong>Mission</strong>: Educational robotics demonstration and object manipulation.</li>
+        <li><strong>Mission Phase</strong>: The analysis is limited to the <strong>normal operation phase</strong>.</li>
+        <li><strong>Operating Time</strong>: The analysis assumes continuous operation for up to <strong>30 minutes</strong>.</li>
+        <li><strong>Severity Categories</strong>: The analysis uses a custom scale from 1 (Minor) to 4 (Catastrophic).</li>
+        <li><strong>Occurrence and Detection Derivation</strong>: Based on the provided document and analyst's judgment.</li>
+        <li><strong>Source of Analysis</strong>: The failure modes, effects, and recommended actions are based <strong>exclusively</strong> on the provided "DC Servo Motor Failure Modes" document.</li>
+        <li><strong>Deviation from MIL-STD-1629</strong>: This report is tailored and deviates from the standard by using the provided document as the sole source for failure analysis.</li>
+    </ul>
+
+    <hr>
+
+    <h3>4.0 Failure Mode and Effects Analysis (FMEA) Worksheet</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Functional Requirement (FR)</th>
+                <th>Failure Mode</th>
+                <th>Cause of Failure</th>
+                <th>Local Effects</th>
+                <th>End Effects (System-Level)</th>
+                <th>Severity (S)</th>
+                <th>Occurrence (O)</th>
+                <th>Detection (D)</th>
+                <th>RPN</th>
+                <th>Recommended Actions</th>
+                <th>Reference</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>SRV-001</strong></td>
+                <td><strong>Servo Motor</strong></td>
+                <td>FR3.1: Control the gripper to reach the desired position.</td>
+                <td><strong>Bearing Wear</strong></td>
+                <td>Continuous operation or misalignment; lubrication degradation; contaminants.</td>
+                <td>Increased friction, noise, and heat; bearing can seize.</td>
+                <td>Sluggish or erratic motion; loss of position accuracy; motor can stall.</td>
+                <td><strong>3</strong></td>
+                <td><strong>4</strong></td>
+                <td><strong>1</strong></td>
+                <td><strong>12</strong></td>
+                <td>Monitor for noise and heat; regular maintenance to inspect bearings.</td>
+                <td>a-m-c.com, mroelectric.com</td>
+            </tr>
+            <tr>
+                <td><strong>SRV-002</strong></td>
+                <td><strong>Servo Motor</strong></td>
+                <td>FR3.1: Control the gripper to reach the desired position.</td>
+                <td><strong>Brush/Commutator Wear</strong></td>
+                <td>Normal erosion from use.</td>
+                <td>Intermittent electrical contact (sparking); higher resistance; carbon dust deposits; reduced torque output.</td>
+                <td>Inconsistent speed/force; degraded control accuracy.</td>
+                <td><strong>2</strong></td>
+                <td><strong>3</strong></td>
+                <td><strong>1</strong></td>
+                <td><strong>6</strong></td>
+                <td>Implement a maintenance schedule to check brushes and commutator.</td>
+                <td>wraycastle.com, mroelectric.com</td>
+            </tr>
+            <tr>
+                <td><strong>SRV-003</strong></td>
+                <td><strong>Servo Motor</strong></td>
+                <td>FR3.1: Control the gripper to reach the desired position.</td>
+                <td><strong>Winding Insulation Failure</strong></td>
+                <td>Age, heat, or contamination.</td>
+                <td>Hot spots; "burned out" motor.</td>
+                <td>Sudden loss of torque or complete motor shutdown; loss of DOF.</td>
+                <td><strong>4</strong></td>
+                <td><strong>2</strong></td>
+                <td><strong>2</strong></td>
+                <td><strong>16</strong></td>
+                <td>Control operating temperature; avoid contamination.</td>
+                <td>industrialautomationco.com, kebamerica.com, a-m-c.com</td>
+            </tr>
+            <tr>
+                <td><strong>SRV-004</strong></td>
+                <td><strong>Servo Motor</strong></td>
+                <td>FR3.1: Control the gripper to reach the desired position.</td>
+                <td><strong>Overheating</strong></td>
+                <td>Blocked cooling; high ambient heat; prolonged high load.</td>
+                <td>Component degradation (insulation cracks, resistance changes); thermal protection trip.</td>
+                <td>Reduced torque and responsiveness; reduced accuracy; sudden shutdowns.</td>
+                <td><strong>3</strong></td>
+                <td><strong>3</strong></td>
+                <td><strong>1</strong></td>
+                <td><strong>9</strong></td>
+                <td>Ensure proper ventilation; avoid prolonged high load operation.</td>
+                <td>mroelectric.com, a-m-c.com</td>
+            </tr>
+            <tr>
+                <td><strong>SRV-005</strong></td>
+                <td><strong>Servo Motor</strong></td>
+                <td>FR3.1: Control the gripper to reach the desired position.</td>
+                <td><strong>Contamination</strong></td>
+                <td>Ingress of dust, debris, oil, or coolant.</td>
+                <td>Abrasion of bearings; fouling of windings; electrical shorts.</td>
+                <td>Motor overheats and loses precision; unpredictable or erratic behavior.</td>
+                <td><strong>3</strong></td>
+                <td><strong>3</strong></td>
+                <td><strong>2</strong></td>
+                <td><strong>18</strong></td>
+                <td>Operate in a clean, dry environment; inspect for debris regularly.</td>
+                <td>industrialautomationco.com, kebamerica.com</td>
+            </tr>
+            <tr>
+                <td><strong>SRV-006</strong></td>
+                <td><strong>Servo Motor</strong></td>
+                <td>FR3.2: Monitor and provide feedback on position.</td>
+                <td><strong>Feedback Sensor Wear</strong></td>
+                <td>Wear or dirt in the sensor.</td>
+                <td>Servo "hunts" or oscillates; failure to hold position.</td>
+                <td>Growing position error; less accurate and reproducible movements; systematic errors.</td>
+                <td><strong>3</strong></td>
+                <td><strong>4</strong></td>
+                <td><strong>1</strong></td>
+                <td><strong>12</strong></td>
+                <td>Regularly calibrate or inspect feedback sensors for drift and wear.</td>
+                <td>gesrepair.com, mroelectric.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>5.0 Criticality Analysis and Conclusions</h3>
+    <p>The FMEA identifies <strong>Contamination</strong> (RPN=18) and <strong>Winding Insulation Failure</strong> (RPN=16) as the most critical failure modes for the servo motor. Both can lead to severe system-level effects, including permanent motor damage and a complete loss of function for a given degree of freedom.</p>
+    
+    <h4>5.1 Reliability Critical Item Lists</h4>
+    <p>The servo motors themselves, particularly their <strong>internal windings and feedback sensors</strong>, are identified as reliability-critical items due to their direct impact on the arm's core functionality.</p>
+
+    <h4>5.2 Recommended Actions</h4>
+    <p>Based on the analysis, the following actions are recommended to mitigate risks:</p>
+    <ul>
+        <li><strong>Environmental Control</strong>: Ensure the robot is operated in a clean, dry, and temperature-controlled environment to prevent contamination and overheating, addressing the highest RPN risks.</li>
+        <li><strong>Load Management</strong>: The user must be instructed to respect the 500g payload limit and avoid prolonged high-load operation to prevent overheating and premature component wear.</li>
+        <li><strong>Regular Inspection</strong>: Periodic visual and auditory inspections should be performed to check for signs of bearing wear (noise, heat), brush wear (sparking), and contamination.</li>
+        <li><strong>Feedback Sensor Calibration</strong>: The system’s position feedback should be monitored for drift, and a calibration routine should be made available to the user to maintain accuracy.</li>
+    </ul>
+
+    <hr>
+
+    <h3>6.0 References</h3>
+    <ul class="reference-list">
+        <li><strong>ADVANCED Motion Controls</strong>: https://www.a-m-c.com/mechanical-servo-motors-failures-and-faults/</li>
+        <li><strong>MRO Electric Blog</strong>: https://www.mroelectric.com/blog/warning-signs-of-a-failing-servo-motor/</li>
+        <li><strong>Wray Castle</strong>: https://wraycastle.com/blogs/knowledge-base/brushed-dc-motor</li>
+        <li><strong>Industrial Automation Co.</strong>: https://industrialautomationco.com/blogs/news/common-causes-of-servo-motor-failure</li>
+        <li><strong>KEB America</strong>: https://www.kebamerica.com/blog/5-causes-of-servo-motor-failure-how-to-prevent-them/</li>
+        <li><strong>Global Electronic Services</strong>: https://gesrepair.com/6-system-wide-issues-caused-by-servo-motor-drift</li>
+    </ul>
+
+</div>
+
+</body>
+</html>
