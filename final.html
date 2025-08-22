@@ -85,11 +85,11 @@
                 <td>Increased friction, noise, and heat; bearing can seize.</td>
                 <td>Sluggish or erratic motion; loss of position accuracy; motor can stall.</td>
                 <td><strong>3</strong></td>
-                <td><strong>4</strong></td>
+                <td><strong>2</strong></td>
                 <td><strong>1</strong></td>
-                <td><strong>12</strong></td>
+                <td><strong>6</strong></td>
                 <td>Monitor for noise and heat; regular maintenance to inspect bearings.</td>
-                <td>a-m-c.com, mroelectric.com</td>
+                <td>1, 2</td>
             </tr>
             <tr>
                 <td><strong>SRV-002</strong></td>
@@ -100,11 +100,11 @@
                 <td>Intermittent electrical contact (sparking); higher resistance; carbon dust deposits; reduced torque output.</td>
                 <td>Inconsistent speed/force; degraded control accuracy.</td>
                 <td><strong>2</strong></td>
-                <td><strong>3</strong></td>
+                <td><strong>4</strong></td>
                 <td><strong>1</strong></td>
-                <td><strong>6</strong></td>
+                <td><strong>8</strong></td>
                 <td>Implement a maintenance schedule to check brushes and commutator.</td>
-                <td>wraycastle.com, mroelectric.com</td>
+                <td>3, 2</td>
             </tr>
             <tr>
                 <td><strong>SRV-003</strong></td>
@@ -119,7 +119,7 @@
                 <td><strong>2</strong></td>
                 <td><strong>16</strong></td>
                 <td>Control operating temperature; avoid contamination.</td>
-                <td>industrialautomationco.com, kebamerica.com, a-m-c.com</td>
+                <td>4, 5, 1</td>
             </tr>
             <tr>
                 <td><strong>SRV-004</strong></td>
@@ -131,10 +131,10 @@
                 <td>Reduced torque and responsiveness; reduced accuracy; sudden shutdowns.</td>
                 <td><strong>3</strong></td>
                 <td><strong>3</strong></td>
-                <td><strong>1</strong></td>
-                <td><strong>9</strong></td>
+                <td><strong>2</strong></td>
+                <td><strong>18</strong></td>
                 <td>Ensure proper ventilation; avoid prolonged high load operation.</td>
-                <td>mroelectric.com, a-m-c.com</td>
+                <td>2, 1</td>
             </tr>
             <tr>
                 <td><strong>SRV-005</strong></td>
@@ -145,11 +145,11 @@
                 <td>Abrasion of bearings; fouling of windings; electrical shorts.</td>
                 <td>Motor overheats and loses precision; unpredictable or erratic behavior.</td>
                 <td><strong>3</strong></td>
-                <td><strong>3</strong></td>
                 <td><strong>2</strong></td>
-                <td><strong>18</strong></td>
+                <td><strong>1</strong></td>
+                <td><strong>6</strong></td>
                 <td>Operate in a clean, dry environment; inspect for debris regularly.</td>
-                <td>industrialautomationco.com, kebamerica.com</td>
+                <td>4, 5</td>
             </tr>
             <tr>
                 <td><strong>SRV-006</strong></td>
@@ -161,10 +161,10 @@
                 <td>Growing position error; less accurate and reproducible movements; systematic errors.</td>
                 <td><strong>3</strong></td>
                 <td><strong>4</strong></td>
-                <td><strong>1</strong></td>
-                <td><strong>12</strong></td>
+                <td><strong>2</strong></td>
+                <td><strong>24</strong></td>
                 <td>Regularly calibrate or inspect feedback sensors for drift and wear.</td>
-                <td>gesrepair.com, mroelectric.com</td>
+                <td>6, 2</td>
             </tr>
         </tbody>
     </table>
@@ -172,7 +172,7 @@
     <hr>
 
     <h3>5.0 Criticality Analysis and Conclusions</h3>
-    <p>The FMEA identifies <strong>Contamination</strong> (RPN=18) and <strong>Winding Insulation Failure</strong> (RPN=16) as the most critical failure modes for the servo motor. Both can lead to severe system-level effects, including permanent motor damage and a complete loss of function for a given degree of freedom.</p>
+    <p>The FMEA identifies <strong>Feedback Sensor Wear</strong> (RPN=24) and <strong>Overheating</strong> (RPN=18) as the most critical failure modes for the servo motor. Both can lead to severe system-level effects, including a complete loss of function for a given degree of freedom and reduced accuracy. The previous analysis showed contamination as the highest risk, but with a more realistic assessment, the primary drivers of failure for an educational robot are tied to wear-and-tear and user-related issues like overloading.</p>
     
     <h4>5.1 Reliability Critical Item Lists</h4>
     <p>The servo motors themselves, particularly their <strong>internal windings and feedback sensors</strong>, are identified as reliability-critical items due to their direct impact on the arm's core functionality.</p>
@@ -190,12 +190,12 @@
 
     <h3>6.0 References</h3>
     <ul class="reference-list">
-        <li><strong>ADVANCED Motion Controls</strong>: https://www.a-m-c.com/mechanical-servo-motors-failures-and-faults/</li>
-        <li><strong>MRO Electric Blog</strong>: https://www.mroelectric.com/blog/warning-signs-of-a-failing-servo-motor/</li>
-        <li><strong>Wray Castle</strong>: https://wraycastle.com/blogs/knowledge-base/brushed-dc-motor</li>
-        <li><strong>Industrial Automation Co.</strong>: https://industrialautomationco.com/blogs/news/common-causes-of-servo-motor-failure</li>
-        <li><strong>KEB America</strong>: https://www.kebamerica.com/blog/5-causes-of-servo-motor-failure-how-to-prevent-them/</li>
-        <li><strong>Global Electronic Services</strong>: https://gesrepair.com/6-system-wide-issues-caused-by-servo-motor-drift</li>
+        <li><strong>[1] ADVANCED Motion Controls</strong>: https://www.a-m-c.com/mechanical-servo-motors-failures-and-faults/</li>
+        <li><strong>[2] MRO Electric Blog</strong>: https://www.mroelectric.com/blog/warning-signs-of-a-failing-servo-motor/</li>
+        <li><strong>[3] Wray Castle</strong>: https://wraycastle.com/blogs/knowledge-base/brushed-dc-motor</li>
+        <li><strong>[4] Industrial Automation Co.</strong>: https://industrialautomationco.com/blogs/news/common-causes-of-servo-motor-failure</li>
+        <li><strong>[5] KEB America</strong>: https://www.kebamerica.com/blog/5-causes-of-servo-motor-failure-how-to-prevent-them/</li>
+        <li><strong>[6] Global Electronic Services</strong>: https://gesrepair.com/6-system-wide-issues-caused-by-servo-motor-drift</li>
     </ul>
 
 </div>
